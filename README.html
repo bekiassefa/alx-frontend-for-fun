@@ -1,0 +1,558 @@
+<p>
+Markdown to HTML
+<br/>
+Python
+<br/>
+HTML
+<br/>
+ By: Guillaume, CTO at Holberton School
+<br/>
+ Weight: 1
+<br/>
+ Project will start Oct 9, 2023 6:00 AM, must end by Oct 16, 2023 6:00 AM
+<br/>
+ Checker was released at Oct 11, 2023 12:00 AM
+<br/>
+ An auto review will be launched at the deadline
+<br/>
+Description
+<br/>
+Markdown is awesome! All your README.md are made in Markdown, but do you know how GitHub are rendering them?
+</p>
+<p>
+It’s time to code a Markdown to HTML!
+</p>
+<p>
+Requirements
+<br/>
+All your files will be interpreted/compiled on Ubuntu 18.04 LTS using python3 (version 3.7 or higher)
+<br/>
+The first line of all your files should be exactly #!/usr/bin/python3
+<br/>
+A README.md file, at the root of the folder of the project, is mandatory
+<br/>
+Your code should use the PEP 8 style (version 1.7.*)
+<br/>
+All your files must be executable
+<br/>
+All your modules should be documented: python3 -c 'print(<em>import</em>("my_module").__doc__)'
+<br/>
+Your code should not be executed when imported (by using if <em>name</em> == "__main__":)
+<br/>
+Tasks
+<br/>
+0. Start a script
+<h1>advanced</h1>
+<br/>
+Write a script markdown2html.py that takes an argument 2 strings:
+</p>
+<p>
+First argument is the name of the Markdown file
+<br/>
+Second argument is the output file name
+<br/>
+Requirements:
+</p>
+<p>
+If the number of arguments is less than 2: print in STDERR Usage: ./markdown2html.py README.md README.html and exit 1
+<br/>
+If the Markdown file doesn’t exist: print in STDER Missing <filename> and exit 1
+<br/>
+Otherwise, print nothing and exit 0
+<br/>
+guillaume@vagrant:~/$ ./markdown2html.py
+<br/>
+Usage: ./markdown2html.py README.md README.html
+<br/>
+guillaume@vagrant:~/$ echo $?
+<br/>
+1
+<br/>
+guillaume@vagrant:~/$
+<br/>
+guillaume@vagrant:~/$ ./markdown2html.py README.md README.html 
+<br/>
+Missing README.md
+<br/>
+guillaume@vagrant:~/$ echo $?
+<br/>
+1
+<br/>
+guillaume@vagrant:~/$
+<br/>
+guillaume@vagrant:~/$ echo "Test" > README.md
+<br/>
+guillaume@vagrant:~/$ ./markdown2html.py README.md README.html 
+<br/>
+guillaume@vagrant:~/$ 
+<br/>
+Repo:
+</p>
+<p>
+GitHub repository: alx-frontend-for-fun
+<br/>
+File: markdown2html.py
+<br/>
+  
+<br/>
+1. Headings
+<h1>advanced</h1>
+<br/>
+Improve markdown2html.py by parsing Headings Markdown syntax for generating HTML:
+</p>
+<p>
+Syntax: (you can assume it will be strictly this syntax)
+</p>
+<p>
+Markdown	HTML generated
+<h1>Heading level 1	<h1>Heading level 1</h1></h1>
+<h2>Heading level 2	<h2>Heading level 1</h2></h2>
+<h3>Heading level 3	<h3>Heading level 1</h3></h3>
+<h4>Heading level 4	<h4>Heading level 1</h4></h4>
+<h5>Heading level 5	<h5>Heading level 1</h5></h5>
+<h6>Heading level 6	<h6>Heading level 1</h6></h6>
+<br/>
+guillaume@vagrant:~/$ cat README.md
+<h1>My title</h1>
+<h2>My title2</h2>
+<h1>My title3</h1>
+<h4>My title4</h4>
+<h3>My title5</h3>
+</p>
+<p>
+guillaume@vagrant:~/$ ./markdown2html.py README.md README.html 
+<br/>
+guillaume@vagrant:~/$ cat README.html 
+<br/>
+<h1>My title</h1>
+<br/>
+<h2>My title2</h2>
+<br/>
+<h1>My title3</h1>
+<br/>
+<h4>My title4</h4>
+<br/>
+<h3>My title5</h3>
+<br/>
+guillaume@vagrant:~/$ 
+<br/>
+Spacing and new lines between HTML tags don’t need to be exactly this one
+</p>
+<p>
+Repo:
+</p>
+<p>
+GitHub repository: alx-frontend-for-fun
+<br/>
+File: markdown2html.py
+<br/>
+  
+<br/>
+2. Unordered listing
+<h1>advanced</h1>
+<br/>
+Improve markdown2html.py by parsing Unordered listing syntax for generating HTML:
+</p>
+<p>
+Syntax: (you can assume it will be strictly this syntax)
+</p>
+<p>
+Markdown:
+</p>
+<ul>
+<li>Hello</li>
+<li>Bye</li>
+</ul>
+<p>
+HTML generated:
+</p>
+<p>
+<ul>
+<br/>
+    <li>Hello</li>
+<br/>
+    <li>Bye</li>
+<br/>
+</ul>
+<br/>
+guillaume@vagrant:~/$ cat README.md
+<h1>My title</h1>
+<ul>
+<li>Hello</li>
+<li>Bye</li>
+</ul>
+</p>
+<p>
+guillaume@vagrant:~/$ ./markdown2html.py README.md README.html 
+<br/>
+guillaume@vagrant:~/$ cat README.html 
+<br/>
+<h1>My title</h1>
+<br/>
+<ul>
+<br/>
+<li>Hello</li>
+<br/>
+<li>Bye</li>
+<br/>
+</ul>
+<br/>
+guillaume@vagrant:~/$ 
+<br/>
+Spacing and new lines between HTML tags don’t need to be exactly this one
+</p>
+<p>
+Repo:
+</p>
+<p>
+GitHub repository: alx-frontend-for-fun
+<br/>
+File: markdown2html.py
+<br/>
+  
+<br/>
+3. Ordered listing
+<h1>advanced</h1>
+<br/>
+Improve markdown2html.py by parsing Ordered listing syntax for generating HTML:
+</p>
+<p>
+Syntax: (you can assume it will be strictly this syntax)
+</p>
+<p>
+Markdown:
+</p>
+<ol>
+<li>Hello</li>
+<li>Bye</li>
+</ol>
+<p>
+HTML generated:
+</p>
+<p>
+<ol>
+<br/>
+    <li>Hello</li>
+<br/>
+    <li>Bye</li>
+<br/>
+</ol>
+<br/>
+guillaume@vagrant:~/$ cat README.md
+<h1>My title</h1>
+<ol>
+<li>Hello</li>
+<li>Bye</li>
+</ol>
+</p>
+<p>
+guillaume@vagrant:~/$ ./markdown2html.py README.md README.html 
+<br/>
+guillaume@vagrant:~/$ cat README.html 
+<br/>
+<h1>My title</h1>
+<br/>
+<ol>
+<br/>
+<li>Hello</li>
+<br/>
+<li>Bye</li>
+<br/>
+</ol>
+<br/>
+guillaume@vagrant:~/$ 
+<br/>
+Spacing and new lines between HTML tags don’t need to be exactly this one
+</p>
+<p>
+Repo:
+</p>
+<p>
+GitHub repository: alx-frontend-for-fun
+<br/>
+File: markdown2html.py
+<br/>
+  
+<br/>
+4. Simple text
+<h1>advanced</h1>
+<br/>
+Improve markdown2html.py by parsing paragraph syntax for generating HTML:
+</p>
+<p>
+Syntax: (you can assume it will be strictly this syntax)
+</p>
+<p>
+Markdown:
+</p>
+<p>
+Hello
+</p>
+<p>
+I'm a text
+<br/>
+with 2 lines
+<br/>
+HTML generated:
+</p>
+<p>
+<p>
+<br/>
+    Hello
+<br/>
+</p>
+<br/>
+<p>
+<br/>
+    I'm a text
+<br/>
+        <br />
+<br/>
+    with 2 lines
+<br/>
+</p>
+<br/>
+guillaume@vagrant:~/$ cat README.md
+<h1>My title</h1>
+<ul>
+<li>Hello</li>
+<li>Bye</li>
+</ul>
+</p>
+<p>
+Hello
+</p>
+<p>
+I'm a text
+<br/>
+with 2 lines
+</p>
+<p>
+guillaume@vagrant:~/$ ./markdown2html.py README.md README.html 
+<br/>
+guillaume@vagrant:~/$ cat README.html 
+<br/>
+<h1>My title</h1>
+<br/>
+<ul>
+<br/>
+<li>Hello</li>
+<br/>
+<li>Bye</li>
+<br/>
+</ul>
+<br/>
+<p>
+<br/>
+Hello
+<br/>
+</p>
+<br/>
+<p>
+<br/>
+I'm a text
+<br/>
+<br/>
+<br/>
+with 2 lines
+<br/>
+</p>
+<br/>
+guillaume@vagrant:~/$ 
+<br/>
+Spacing and new lines between HTML tags don’t need to be exactly this one
+</p>
+<p>
+Repo:
+</p>
+<p>
+GitHub repository: alx-frontend-for-fun
+<br/>
+File: markdown2html.py
+<br/>
+  
+<br/>
+5. Bold and emphasis text
+<h1>advanced</h1>
+<br/>
+Improve markdown2html.py by parsing bold syntax for generating HTML:
+</p>
+<p>
+Syntax: (you can assume it will be strictly this syntax)
+</p>
+<p>
+Markdown	HTML generated
+<br/>
+<b>Hello</b>	<b>Hello</b>
+<br/>
+<em>Hello</em>	<em>Hello</em>
+<br/>
+guillaume@vagrant:~/$ cat README.md
+<h1>My title</h1>
+<ul>
+<li>He<b>l</b>lo</li>
+<li>Bye</li>
+</ul>
+</p>
+<p>
+Hello
+</p>
+<p>
+I'm <b>a</b> text
+<br/>
+with <em>2 lines</em>
+</p>
+<p>
+<b>Or in bold</b>
+</p>
+<p>
+guillaume@vagrant:~/$ ./markdown2html.py README.md README.html 
+<br/>
+guillaume@vagrant:~/$ cat README.html 
+<br/>
+<h1>My title</h1>
+<br/>
+<ul>
+<br/>
+<li>He<b>l</b>lo</li>
+<br/>
+<li>Bye</li>
+<br/>
+</ul>
+<br/>
+<p>
+<br/>
+Hello
+<br/>
+</p>
+<br/>
+<p>
+<br/>
+I'm <b>a</b> text
+<br/>
+<br/>
+<br/>
+with <em>2 lines</em>
+<br/>
+</p>
+<br/>
+<p>
+<br/>
+<b>Or in bold</b>
+<br/>
+</p>
+<br/>
+guillaume@vagrant:~/$ 
+<br/>
+Spacing and new lines between HTML tags don’t need to be exactly this one
+</p>
+<p>
+Repo:
+</p>
+<p>
+GitHub repository: alx-frontend-for-fun
+<br/>
+File: markdown2html.py
+<br/>
+  
+<br/>
+6. ... but why??
+<h1>advanced</h1>
+<br/>
+Improve markdown2html.py by parsing bold syntax for generating HTML:
+</p>
+<p>
+Syntax: (you can assume it will be strictly this syntax)
+</p>
+<p>
+Markdown	HTML generated	description
+<br/>
+8b1a9953c4611296a827abf8c47804d7	8b1a9953c4611296a827abf8c47804d7	convert in MD5 (lowercase) the content
+<br/>
+Hello hiago	Hello hiago	remove all c (case insensitive) from the content
+<br/>
+guillaume@vagrant:~/$ cat README.md
+<h1>My title</h1>
+<ul>
+<li>He<b>l</b>lo</li>
+<li>Bye</li>
+</ul>
+</p>
+<p>
+Hello
+</p>
+<p>
+I'm <b>a</b> text
+<br/>
+with <em>2 lines</em>
+</p>
+<p>
+I will live in araas
+</p>
+<p>
+But it's 2c17c6393771ee3048ae34d6b380c5ec
+</p>
+<p>
+So cool!
+</p>
+<p>
+guillaume@vagrant:~/$ ./markdown2html.py README.md README.html 
+<br/>
+guillaume@vagrant:~/$ cat README.html 
+<br/>
+<h1>My title</h1>
+<br/>
+<ul>
+<br/>
+<li>He<b>l</b>lo</li>
+<br/>
+<li>Bye</li>
+<br/>
+</ul>
+<br/>
+<p>
+<br/>
+Hello
+<br/>
+</p>
+<br/>
+<p>
+<br/>
+I'm <b>a</b> text
+<br/>
+<br/>
+<br/>
+with <em>2 lines</em>
+<br/>
+</p>
+<br/>
+<p>
+<br/>
+I will live in araas
+<br/>
+</p>
+<br/>
+<p>
+<br/>
+But it's 2c17c6393771ee3048ae34d6b380c5ec
+<br/>
+</p>
+<br/>
+<p>
+<br/>
+So cool!
+<br/>
+</p>
+<br/>
+guillaume@vagrant:~/$ 
+<br/>
+Spacing and new lines between HTML tags don’t need to be exactly this one
+</p>
+<p>
+Repo:
+</p>
+<p>
+GitHub repository: alx-frontend-for-fun
+<br/>
+File: markdown2html.py
+</p>
